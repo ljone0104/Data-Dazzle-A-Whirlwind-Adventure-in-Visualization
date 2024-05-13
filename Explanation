@@ -1,0 +1,23 @@
+Data Visualization 
+Data visualization helps researchers explore complex biological data, identify patterns, and communicate findings effectively and aids hypothesis generation and testing, quality assessment of data, decision support in personalized medicine, integration of diverse data sources, and simplifying complex information for both expert and non-expert audiences. However, there are time when data visualization is not well utilized for proper or accrued understanding, that is why I created a set of coding sequences on R studio that inspires how information can be interpreted under this technology in a good or bad way. 
+
+Before plugging information to gain a code we need to download all the libraries required or that will be utilized for this project, like gap minder, dplyr, and ggplot2. More specifically, library(gapminder), library(dplyr), library(ggplot2). Once we do that we can start coding the sequences and each one will connect to a determined image that will go along with the code, in this case, we are trying to find the life expectancy on each continent and compare one another to come up with an understanding of who’s better and who’s worse. 
+
+ggplot(data = gapminder) + geom_point(mapping=aes(x=lifeExp, y=continent))
+On this image we have a strip plot or dot chart the shows the comparison of life expectancy under each continent, the interpretation of strip plots and dot charts can be subjective as they rely heavily on visual inspection. Therefore, while strip plots or dot charts are effective for visualizing distributions within a single variable, that’s why in this case is not well souited for comparing multiple variables which are the life expectancy on each continent. 
+
+
+
+
+ggplot(data = gapminder) + geom_point(mapping = aes(x=lifeExp, y=continent, color=year))
+Second image is the same as the previous one the only difference is that they differe by color, this colors provides us with a little more explicit information which is the life expectancy by year. Therefore, makes this code better than the previous one when it comes to the understanding of the particular data visualization. Being the darkest blue a further year (1960) to a more resent year (2000). By being better than the previous one doesn’t mean that is a good data visual, still bad but not as bad. 
+
+ggplot(data = gapminder) + geom_point(mapping = aes(x=lifeExp, y=continent), color = "blue")
+Third code provided us the same table as the first one, it only shows completely blue instead of black. Making it still a bad data visualization. 
+
+
+
+ggplot(data = gapminder) + geom_density(mapping = aes(x=lifeExp, linetype=continent), alpha=0.5)
+This last one was my absolute favorite because it gaved us a concrete data visual to undestant the life expectancy of each continent with it’s density. Therefore, line charts are excellent for visualizing trends over time or across ordered categories like in this case because it provides a clear representation of how data values change sequentially, and allows for the simultaneous comparison of multiple data series like the different continents on the plot sample. 
+
+In conclusion, the choice between a line chart and a strip plot/dot chart depends on the nature of the dat and the specific objective of the analysis, both visualization techniques play complementary roles in data analysis offering unique insights and facilitating different aspects of data exploration and interpretation. I’m sure that if we had other type of information dot chart will look way more different and will be a good fit, but is not the case for this situation that’s why there are about 20 different types of chart that go according to the information provided to gain an understandable visual. 
