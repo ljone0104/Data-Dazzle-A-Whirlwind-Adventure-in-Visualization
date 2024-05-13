@@ -1,0 +1,8 @@
+library(gapminder)
+library(dplyr)
+library(ggplot2)
+dvst <- mutate(dvst, contient = (end + start) / 2)
+ggplot(data = gapminder) + geom_point(mapping=aes(x=lifeExp, y=continent))
+ggplot(data = gapminder) + geom_point(mapping = aes(x=lifeExp, y=continent, color=year))
+ggplot(data = gapminder) + geom_point(mapping = aes(x=lifeExp, y=continent), color = "blue")
+ggplot(data = gapminder) + geom_density(mapping = aes(x=lifeExp, linetype=continent), alpha=0.5)
